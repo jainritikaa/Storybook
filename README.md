@@ -1,10 +1,10 @@
 
-```markdown
+
 # 🌈 Design System Components – Internship Assignment
 
 A small, scalable, and reusable design system built with **React**, **TypeScript**, **TailwindCSS**, and **Storybook**. Created as part of a front-end developer internship assignment to demonstrate UI skills, component architecture, and documentation practices.
 
----
+
 
 ## 🛠 Tech Stack
 
