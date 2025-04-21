@@ -5,7 +5,6 @@
 A small, scalable, and reusable design system built with **React**, **TypeScript**, **TailwindCSS**, and **Storybook**. Created as part of a front-end developer internship assignment to demonstrate UI skills, component architecture, and documentation practices.
 
 
-
 ## 🛠 Tech Stack
 
 - ⚛️ React (with Vite or CRA)
@@ -13,7 +12,6 @@ A small, scalable, and reusable design system built with **React**, **TypeScript
 - 🎨 TailwindCSS (with dark mode support)
 - 📚 Storybook (UI explorer + documentation)
 
----
 
 ## 📦 Components
 
@@ -24,7 +22,7 @@ A small, scalable, and reusable design system built with **React**, **TypeScript
 
 More components coming soon...
 
----
+
 
 ## 🚀 Getting Started
 

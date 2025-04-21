@@ -1,16 +1,32 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'danger'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    children: {
+      control: 'text',
+    },
+  },
 };
 
-export const Primary = () => <Button>Primary</Button>;
-export const Secondary = () => <Button variant="secondary">Secondary</Button>;
-export const Danger = () => <Button variant="danger">Danger</Button>;
-export const Disabled = () => <Button disabled>Disabled</Button>;
-export const WithClick = () => (
-  <Button onClick={() => alert('Button clicked!')}>Click Me</Button>
-);
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Interactive: Story = {
+  args: {
+    children: 'Click Me',
+    variant: 'primary',
+    disabled: false,
+  },
+};
