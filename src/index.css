@@ -16,3 +16,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer utilities {
+  .bg-striped {
+    background: linear-gradient(45deg, rgba(0,0,0,.2) 25%, transparent 25%) -50px 0, 
+                linear-gradient(45deg, rgba(0,0,0,.2) 25%, transparent 25%) 50px 0;
+    background-size: 100px 100px;
+  }
+}
