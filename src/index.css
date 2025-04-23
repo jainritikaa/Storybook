@@ -2,7 +2,253 @@
 @tailwind components;
 @tailwind utilities;
 
+/:root {
+  font-family: 'Georgia';
+  /* Primary Palette */
+  
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
 
+  /* Secondary Palette */
+  
+  --color-secondary: #7c3aed;
+  --color-secondary-hover: #6b21a8;
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-text: #4b5563;
+  --color-sidebar-icon: #6b7280;
+  --color-sidebar-hover: #f3f4f6;
+  --color-sidebar-border: #e5e7eb;
+  /* Neutral Palette */
+  
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-500: #737373;
+  --color-neutral-900: #171717;
+  
+
+  /* Semantic Colors */
+  
+  --color-success: #10b981;
+  --color-info: #3b82f6;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Background / Surface */
+  
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+}
+
+[data-theme="dark"] {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+
+  --color-secondary: #a855f7;
+  --color-secondary-hover: #9333ea;
+  --color-sidebar-bg: #1f2937;
+  --color-sidebar-text: #f3f4f6;
+  --color-sidebar-icon: #9ca3af;
+  --color-sidebar-hover: #374151;
+  --color-sidebar-border: #4b5563;
+  --color-neutral-100: #171717;
+  --color-neutral-500: #a3a3a3;
+  --color-neutral-900: #f5f5f5;
+
+  --color-success: #22c55e;
+  --color-info: #60a5fa;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+} */
+/* color-tokens.css */
+:root {
+  /* ============ Primary Colors ============ */
+  --color-primary-50: #e8f2ff;
+  --color-primary-100: #d0e4ff;
+  --color-primary-200: #a1c9ff;
+  --color-primary-300: #72aeff;
+  --color-primary-400: #4393ff;
+  --color-primary-500: #1478ff; /* Base primary */
+  --color-primary-600: #1060cc;
+  --color-primary-700: #0c4899;
+  --color-primary-800: #083066;
+  --color-primary-900: #041833;
+  
+  /* ============ Secondary Colors ============ */
+  --color-secondary-50: #f0f5ff;
+  --color-secondary-100: #e1ebff;
+  --color-secondary-200: #c3d7ff;
+  --color-secondary-300: #a5c3ff;
+  --color-secondary-400: #87afff;
+  --color-secondary-500: #699bff; /* Base secondary */
+  --color-secondary-600: #547ccb;
+  --color-secondary-700: #3f5d97;
+  --color-secondary-800: #2a3e63;
+  --color-secondary-900: #151f2f;
+  
+  /* ============ Tertiary Colors ============ */
+  --color-tertiary-50: #fff5f0;
+  --color-tertiary-100: #ffebe1;
+  --color-tertiary-200: #ffd7c3;
+  --color-tertiary-300: #ffc3a5;
+  --color-tertiary-400: #ffaf87;
+  --color-tertiary-500: #ff9b69; /* Base tertiary */
+  --color-tertiary-600: #cb7c54;
+  --color-tertiary-700: #975d3f;
+  --color-tertiary-800: #633e2a;
+  --color-tertiary-900: #2f1f15;
+
+  /* ============ Neutral Colors ============ */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+  --color-neutral-1000: #000000;
+  
+  /* ============ Borders ============ */
+  --color-border-light: var(--color-neutral-200);
+  --color-border-medium: var(--color-neutral-300);
+  --color-border-dark: var(--color-neutral-400);
+
+  /* ============ Semantic Colors ============ */
+  /* Success */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  
+  /* Info */
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+  --color-info-200: #bae6fd;
+  --color-info-300: #7dd3fc;
+  --color-info-400: #38bdf8;
+  --color-info-500: #0ea5e9;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+  --color-info-800: #075985;
+  --color-info-900: #0c4a6e;
+  
+  /* Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  
+  /* Error */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* ============ Surfaces & Backgrounds ============ */
+  --color-surface-0: var(--color-neutral-0);
+  --color-surface-50: var(--color-neutral-50);
+  --color-surface-100: var(--color-neutral-100);
+  --color-surface-200: var(--color-neutral-200);
+  
+  /* ============ Elevation ============ */
+  --color-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --color-elevation-2: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --color-elevation-3: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* ============ Usage Tokens ============ */
+  /* Text colors */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-tertiary: var(--color-neutral-400);
+  --color-text-on-primary: var(--color-neutral-0);
+  
+  /* Interactive states */
+  --color-interactive-primary: var(--color-primary-500);
+  --color-interactive-primary-hover: var(--color-primary-600);
+  --color-interactive-primary-active: var(--color-primary-700);
+  
+  --color-interactive-secondary: var(--color-secondary-500);
+  --color-interactive-secondary-hover: var(--color-secondary-600);
+  --color-interactive-secondary-active: var(--color-secondary-700);
+  
+  /* Disabled states */
+  --color-disabled-bg: var(--color-neutral-100);
+  --color-disabled-text: var(--color-neutral-400);
+  --color-disabled-border: var(--color-neutral-200);
+}
+
+/* ============ Dark Theme Overrides ============ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme neutrals (inverted) */
+    --color-neutral-0: #000000;
+    --color-neutral-50: #111827;
+    --color-neutral-100: #1f2937;
+    --color-neutral-200: #374151;
+    --color-neutral-300: #4b5563;
+    --color-neutral-400: #6b7280;
+    --color-neutral-500: #9ca3af;
+    --color-neutral-600: #d1d5db;
+    --color-neutral-700: #e5e7eb;
+    --color-neutral-800: #f3f4f6;
+    --color-neutral-900: #f9fafb;
+    --color-neutral-1000: #ffffff;
+    
+    /* Dark theme borders */
+    --color-border-light: var(--color-neutral-800);
+    --color-border-medium: var(--color-neutral-700);
+    --color-border-dark: var(--color-neutral-600);
+    
+    /* Dark theme surfaces */
+    --color-surface-0: var(--color-neutral-50);
+    --color-surface-50: var(--color-neutral-100);
+    --color-surface-100: var(--color-neutral-200);
+    --color-surface-200: var(--color-neutral-300);
+    
+    /* Dark theme elevation */
+    --color-elevation-1: 0 1px 3px rgba(255, 255, 255, 0.1);
+    --color-elevation-2: 0 4px 6px rgba(255, 255, 255, 0.1);
+    --color-elevation-3: 0 10px 15px rgba(255, 255, 255, 0.1);
+    
+    /* Adjust semantic colors for better visibility in dark mode */
+    --color-success-500: #4ade80;
+    --color-info-500: #38bdf8;
+    --color-warning-500: #fbbf24;
+    --color-error-500: #f87171;
+
+    /* Dark theme usage tokens */
+    --color-text-primary: var(--color-neutral-100);
+    --color-text-secondary: var(--color-neutral-300);
+    --color-text-tertiary: var(--color-neutral-500);
+    
+    --color-disabled-bg: var(--color-neutral-800);
+    --color-disabled-text: var(--color-neutral-600);
+    --color-disabled-border: var(--color-neutral-700);
+  }
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,3 +270,80 @@ code {
     background-size: 100px 100px;
   }
 }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(1.5); opacity: 0; }
+}/* Add this to your global.css or styles.css */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes tickDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes tickFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(1.5); opacity: 0; }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 1s linear infinite;
+}
+
+.animate-tick-draw {
+  animation: tickDraw 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.animate-tick-fade-in {
+  animation: tickFadeIn 0.3s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+

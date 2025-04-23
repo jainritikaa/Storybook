@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": ["class-varience-authority"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
