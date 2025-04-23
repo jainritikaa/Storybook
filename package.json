@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +52,7 @@
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
+    "@storybook/cli": "^8.6.12",
     "@storybook/preset-create-react-app": "^8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/react-webpack5": "^8.6.12",
