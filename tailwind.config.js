@@ -37,6 +37,12 @@ module.exports = {
   darkMode: 'class', // Enable dark mode with class switching
   theme: {
     extend: {
+      keyframes: {
+        'pulse-bg': {
+          '0%, 100%': { backgroundColor: 'transparent' },
+          '50%': { backgroundColor: 'rgba(0,0,0,0.05)' },
+        },
+      },
       colors: {
         // Primary colors
         primary: {
@@ -181,7 +187,9 @@ module.exports = {
         light: '#e5e5e5',
         dark: '#404040',
       },
-      
+      animation: {
+        'pulse-bg': 'pulse-bg 1.5s ease-in-out infinite',
+      },
       // Transition properties
       transitionProperty: {
         'colors': 'color, background-color, border-color, fill, stroke',

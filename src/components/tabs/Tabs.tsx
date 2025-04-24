@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
+// Variants for tab list
 const tabsListVariants = cva(
-  'flex items-center border-b border-border-light dark:border-border-dark',
+  'flex items-center border-b border-border-light dark:border-border-dark relative bg-white dark:bg-gray-800',  // Dark mode background
   {
     variants: {
       variant: {
@@ -11,9 +12,9 @@ const tabsListVariants = cva(
         secondary: '',
       },
       size: {
-        sm: 'space-x-4',
-        md: 'space-x-6',
-        lg: 'space-x-8',
+        sm: 'space-x-2',
+        md: 'space-x-4',
+        lg: 'space-x-6',
       },
     },
     defaultVariants: {
@@ -23,17 +24,18 @@ const tabsListVariants = cva(
   }
 );
 
+// Variants for tab trigger
 const tabsTriggerVariants = cva(
-  'relative py-3 text-sm font-medium transition-all duration-200 focus:outline-none',
+  'relative py-3 text-sm font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2',
   {
     variants: {
       variant: {
         default:
-          'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100',
+          'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 focus:ring-neutral-300 bg-white dark:bg-gray-800',  // Background color for dark mode
         primary:
-          'text-neutral-600 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400',
+          'text-primary-700 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-100 focus:ring-primary-400 bg-primary-100 dark:bg-primary-700',  // Primary variant
         secondary:
-          'text-neutral-600 hover:text-secondary-600 dark:text-neutral-400 dark:hover:text-secondary-400',
+          'text-secondary-700 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-secondary-100 focus:ring-secondary-400 bg-secondary-100 dark:bg-secondary-700',  // Secondary variant
       },
       size: {
         sm: 'text-xs',
@@ -48,12 +50,13 @@ const tabsTriggerVariants = cva(
   }
 );
 
+// Variants for indicator
 const tabsIndicatorVariants = cva(
-  'absolute bottom-0 left-0 h-0.5 transition-all duration-300',
+  'absolute bottom-0 left-0 h-1 rounded-full transition-all duration-300 ease-in-out',
   {
     variants: {
       variant: {
-        default: 'bg-neutral-900 dark:bg-neutral-100',
+        default: 'bg-neutral-900 dark:bg-neutral-100',  // Dark mode indicator
         primary: 'bg-primary-500',
         secondary: 'bg-secondary-500',
       },
@@ -64,6 +67,7 @@ const tabsIndicatorVariants = cva(
   }
 );
 
+// Types
 export interface TabItem {
   value: string;
   label: string;
@@ -81,6 +85,7 @@ export interface TabsProps
   onValueChange?: (value: string) => void;
 }
 
+// Tabs Component
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   (
     {
@@ -168,5 +173,4 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 );
 
 Tabs.displayName = 'Tabs';
-
 export { Tabs };

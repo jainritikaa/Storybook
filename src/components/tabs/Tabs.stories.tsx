@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { Tabs } from './Tabs';
 import { FileText, Settings, User, Mail, Bell } from 'lucide-react';
@@ -68,6 +68,35 @@ export const WithIcons: StoryObj<typeof Tabs> = {
   },
 };
 
+export const DarkLightModeToggle: StoryObj<typeof Tabs> = {
+  render: (args) => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    // Toggle between dark and light mode
+    const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+    return (
+      <div className={isDarkMode ? 'dark' : ''}>
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-white rounded-md mb-4"
+        >
+          Toggle Dark/Light Mode
+        </button>
+        <Tabs {...args} />
+      </div>
+    );
+  },
+  args: {
+    items: [
+      { value: 'overview', label: 'Overview' },
+      { value: 'analytics', label: 'Analytics' },
+      { value: 'reports', label: 'Reports' },
+      { value: 'settings', label: 'Settings' },
+    ],
+  },
+};
+
 export const PrimaryVariant: StoryObj<typeof Tabs> = {
   args: {
     variant: 'primary',
@@ -120,27 +149,27 @@ export const DifferentSizes: StoryObj<typeof Tabs> = {
 };
 
 export const ControlledTabs: StoryObj<typeof Tabs> = {
-    render: (args) => {
-      const [value, setValue] = React.useState('profile');
-  
-      return (
-        <div className="space-y-4">
-          <Tabs
-            {...args}
-            value={value}
-            onValueChange={setValue}
-            items={[
-              { value: 'profile', label: 'Profile' },
-              { value: 'settings', label: 'Settings' },
-              { value: 'billing', label: 'Billing' },
-            ]}
-          />
-          <div className="p-4 border rounded-md">
-            {value === 'profile' && <p>Profile content goes here</p>}
-            {value === 'settings' && <p>Settings content goes here</p>}
-            {value === 'billing' && <p>Billing content goes here</p>}
-          </div>
+  render: (args) => {
+    const [value, setValue] = useState('profile');
+
+    return (
+      <div className="space-y-4">
+        <Tabs
+          {...args}
+          value={value}
+          onValueChange={setValue}
+          items={[
+            { value: 'profile', label: 'Profile' },
+            { value: 'settings', label: 'Settings' },
+            { value: 'billing', label: 'Billing' },
+          ]}
+        />
+        <div className="p-4 border rounded-md">
+          {value === 'profile' && <p>Profile content goes here</p>}
+          {value === 'settings' && <p>Settings content goes here</p>}
+          {value === 'billing' && <p>Billing content goes here</p>}
         </div>
-      );
-    },
-  };
+      </div>
+    );
+  },
+};

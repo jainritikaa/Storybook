@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Timeline , type TimelineItem} from './Timeline';
-import { fn, userEvent, within, expect } from '@storybook/test';
+import { Timeline, type TimelineItem } from './Timeline';
+import { within, expect } from '@storybook/test';
 
 const meta: Meta<typeof Timeline> = {
   title: 'Components/Timeline',
@@ -11,9 +11,7 @@ const meta: Meta<typeof Timeline> = {
       control: { type: 'radio' },
       options: ['vertical', 'horizontal'],
     },
-    showConnectors: {
-      control: 'boolean',
-    },
+    showConnectors: { control: 'boolean' },
     connectorStyle: {
       control: { type: 'radio' },
       options: ['solid', 'dashed'],
@@ -22,50 +20,54 @@ const meta: Meta<typeof Timeline> = {
       control: { type: 'radio' },
       options: ['default', 'compact'],
     },
+    mode: {
+      control: { type: 'radio' },
+      options: ['light', 'dark'],
+    },
   },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof Timeline>;
 
 const sampleItems: TimelineItem[] = [
-    {
-      id: '1',
-      title: 'Project Kickoff',
-      description: 'Initial meeting with stakeholders to define project scope',
-      date: 'Jan 15, 2023',
-      status: 'success', // explicitly typed as one of the allowed values
-    },
-    {
-      id: '2',
-      title: 'Design Phase',
-      description: 'UI/UX design and wireframe approval',
-      date: 'Feb 10, 2023',
-      status: 'success',
-    },
-    {
-      id: '3',
-      title: 'Development Started',
-      description: 'Frontend and backend development begins',
-      date: 'Mar 1, 2023',
-      status: 'info',
-    },
-    {
-      id: '4',
-      title: 'QA Testing',
-      description: 'Quality assurance and bug fixing phase',
-      date: 'Apr 15, 2023',
-      status: 'warning',
-    },
-    {
-      id: '5',
-      title: 'Launch',
-      description: 'Production deployment and go-live',
-      date: 'May 1, 2023',
-      status: 'default',
-    },
-  ];
+  {
+    id: '1',
+    title: 'Project Kickoff',
+    description: 'Initial meeting with stakeholders to define project scope',
+    date: 'Jan 15, 2023',
+    status: 'success',
+  },
+  {
+    id: '2',
+    title: 'Design Phase',
+    description: 'UI/UX design and wireframe approval',
+    date: 'Feb 10, 2023',
+    status: 'success',
+  },
+  {
+    id: '3',
+    title: 'Development Started',
+    description: 'Frontend and backend development begins',
+    date: 'Mar 1, 2023',
+    status: 'info',
+  },
+  {
+    id: '4',
+    title: 'QA Testing',
+    description: 'Quality assurance and bug fixing phase',
+    date: 'Apr 15, 2023',
+    status: 'warning',
+  },
+  {
+    id: '5',
+    title: 'Launch',
+    description: 'Production deployment and go-live',
+    date: 'May 1, 2023',
+    status: 'default',
+  },
+];
+
 export const Default: Story = {
   args: {
     items: sampleItems,
@@ -83,6 +85,13 @@ export const Compact: Story = {
   args: {
     items: sampleItems,
     variant: 'compact',
+  },
+};
+
+export const DarkMode: Story = {
+  args: {
+    items: sampleItems,
+    mode: 'dark',
   },
 };
 
@@ -141,12 +150,9 @@ export const AccessibilityTest: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    
-    // Check all items are rendered
     const items = await canvas.findAllByRole('listitem');
     await expect(items.length).toBe(sampleItems.length);
-    
-    // Check first item's title is visible
+
     const firstTitle = await canvas.findByText('Project Kickoff');
     await expect(firstTitle).toBeInTheDocument();
   },
