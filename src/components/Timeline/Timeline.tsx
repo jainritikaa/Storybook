@@ -33,12 +33,12 @@ const statusColors = {
   },
   success: {
     light: {
-      bg: 'bg-green-100',
+      bg: 'bg-green-200',
       text: 'text-green-600',
       border: 'border-green-300',
     },
     dark: {
-      bg: 'bg-green-900',
+      bg: 'bg-green-700',
       text: 'text-green-200',
       border: 'border-green-700',
     },
@@ -89,7 +89,7 @@ export const Timeline = ({
   variant = 'default',
   mode = 'light',
 }: TimelineProps) => {
-  const bgWrapper = mode === 'dark' ? 'bg-gray-900' : 'bg-white';
+  const bgWrapper = mode === 'dark' ? 'bg-gray-400' : 'bg-white';
 
   return (
     <div className={`p-6 rounded-xl ${bgWrapper}`}>

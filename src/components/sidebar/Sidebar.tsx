@@ -12,7 +12,7 @@ const sidebarVariants = cva(
         lg: 'w-72',
       },
       collapsed: {
-        true: 'w-16',
+        true: 'w-10',
       },
     },
     defaultVariants: {
@@ -26,9 +26,9 @@ const sidebarHeaderVariants = cva(
   {
     variants: {
       size: {
-        sm: 'px-2',
+        sm: 'px-0',
         md: 'px-4',
-        lg: 'px-6',
+        lg: 'px-7',
       },
       collapsed: {
         true: 'px-2 justify-center',

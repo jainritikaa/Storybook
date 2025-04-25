@@ -14,6 +14,7 @@ import {
 const meta: Meta<typeof Sidebar> = {
   title: 'Components/Sidebar',
   component: Sidebar,
+  tags:['autodocs'],
   argTypes: {
     size: {
       control: {

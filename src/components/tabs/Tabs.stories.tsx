@@ -6,7 +6,8 @@ import { FileText, Settings, User, Mail, Bell } from 'lucide-react';
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs',
   component: Tabs,
-  argTypes: {
+  tags:['autodocs'] ,
+   argTypes: {
     variant: {
       control: {
         type: 'select',
